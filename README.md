@@ -2,3 +2,4 @@
 Cinema Seat Booking Kata
 
 test
+test
