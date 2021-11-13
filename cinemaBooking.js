@@ -29,9 +29,28 @@ function chkNumOfSeatsLeft() {
     return cnt;
 }
 
+function bookSeats(numOfSeats) {
+    const seatArr = [];
+    let totalSeat = numOfSeats;
+    
+    for (let i=0; i<cinemaSeats.length; i++) {
+        if (totalSeat>0) {
+            if (cinemaSeats[i].Booked=="N") {
+                cinemaSeats[i].Booked="Y";
+                seatArr.push(cinemaSeats[i].SeatNo);
+                totalSeat--;
+            }       
+        }
+    }
+    
+    return seatArr;
+}
+
 module.exports = {
     getRandomSeat,
-    chkNumOfSeatsLeft
+    chkNumOfSeatsLeft,
+    bookSeats
 };
 
 //console.log(getRandomSeat(1,3));
+//console.log(bookSeats(3));

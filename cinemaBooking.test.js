@@ -1,6 +1,7 @@
 const {
     getRandomSeat,
-    chkNumOfSeatsLeft
+    chkNumOfSeatsLeft,
+    bookSeats
 } = require('./cinemaBooking');  
 
 describe("test get the random seat number between 1 and 3", () => {
@@ -17,5 +18,11 @@ describe("test get the random seat number between 1 and 3", () => {
 describe("check number of seats left in the cinema", () => {
   test("return 15 seats", () => {
     expect(chkNumOfSeatsLeft()).toBe(15);
+  });     
+});
+
+describe("book seat by passing a number of seats", () => {
+  test("book for 3 seats and return seats A1,A2,A3 in array", () => {
+    expect(bookSeats(3)).toEqual(['A1','A2','A3']);
   });     
 });
