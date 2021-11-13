@@ -1,5 +1,4 @@
 # js-cinema-kata
 Cinema Seat Booking Kata
 
-test
-test
+Test 2
