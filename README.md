@@ -1,17 +1,20 @@
 # js-cinema-kata
+
 Cinema Seat Booking Kata
 
 How to run:
-- in command prompt, type:
+* in command prompt, type:
   node cinemaBooking.js
   or if you want to keep the running result, please type:
   node cinemaBooking.js > result.txt (see example result.txt in github)
-- to call it externally, please provide the array of json object in the following format to represent the seats in the cinema:
+* to call it externally, please provide the array of json object in the following format to represent the seats in the cinema:
   const cinemaSeats = [
+
     {SeatNo:"A1", Booked:"N"}, ...]
+
 <br>    
 Result:
-- program will print out the whole booking process until no more seats available and stopped.
+* program will print out the whole booking process until no more seats available and stopped.
 <br>
 Assumptions:
 1. minimum seat for each booking = 1
@@ -30,16 +33,16 @@ Approaches:
 <br>
 Functionality:
 1.getRandomSeat
-- return the random seats number from 1 to 3
+* return the random seats number from 1 to 3
 2.chkNumOfSeatsLeft
-- return how many seats still available for booking (max:15, min:0)
+* return how many seats still available for booking (max:15, min:0)
 3.bookSeats
-- perform book seat process based on no. of seats to book and update the array of json objects Booked value for the next available seats
+* perform book seat process based on no. of seats to book and update the array of json objects Booked value for the next available seats
 4.checkSeat
-- return false when total no. of seats left is less than the pass-in no. of seats to book
-- return true when total no. of seats left is enough for next booking
+* return false when total no. of seats left is less than the pass-in no. of seats to book
+* return true when total no. of seats left is enough for next booking
 5.cinemaBooking
-- receive array of seats available as pass-in parameter and perform auto booking process until no more seats available for booking
+* receive array of seats available as pass-in parameter and perform auto booking process until no more seats available for booking
 <br>
 Problems:
 1. when using jest.mock function to mock getRandomSeat, it is fine.
@@ -55,5 +58,3 @@ Future thoughts:
 3. can use a database to store cinema booking information (tables: cinema, seats, booking, etc)
 4. can use the saved data to build reports (e.g. monthly revenue report, which movie is famous and so on)
 5. can base on the customer booking transaction to know more about which category of movie can be recommended to the customer next time to increase revenue
-
-
