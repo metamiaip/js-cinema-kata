@@ -53,13 +53,36 @@ function checkSeat(totalSeats,bookSeats) {
     return (totalSeats >= bookSeats);
 }
 
+function cinemaBooking(seatsArr) {
+    let seatLeft = chkNumOfSeatsLeft(seatsArr);
+    let curBooking = 0;
+    let errMsg = "";
+    while (seatLeft > 0) {
+        console.log(`Total seats left: ${seatLeft}`);
+        curBooking = getRandomSeat(minSeat,maxSeat);
+        console.log(`Book seats=${curBooking}`);
+        
+        if (checkSeat(seatLeft,curBooking)) {
+            console.log(`Seats allocated=${bookSeats(seatsArr,curBooking)}`);
+            seatLeft=seatLeft-curBooking;
+        }
+        else {
+            errMsg="Error! Insufficient seats for allocation!\nSystem stopped!";
+            console.log(errMsg);
+            break;
+        }
+    }
+    return (errMsg==""? "Success":"Error");
+}
+
 module.exports = {
     getRandomSeat,
     chkNumOfSeatsLeft,
     bookSeats,
-    checkSeat
+    checkSeat,
+    cinemaBooking
 };
 
 //console.log(getRandomSeat(1,3));
 //console.log(bookSeats(3));
-//cinemaBooking();
+console.log(cinemaBooking(cinemaSeats));

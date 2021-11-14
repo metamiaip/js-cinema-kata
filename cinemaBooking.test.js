@@ -74,3 +74,42 @@ describe("check whether seats are available", () => {
     expect(checkSeat(1,2)).toBe(false);
   }); 
 });
+
+/*
+jest.mock('./cinemaBooking', () => {
+  const original = jest.requireActual('./cinemaBooking'); 
+  return {
+      ...original,
+      getRandomSeat: jest.fn()
+  };
+});
+
+
+test('always generate random seats to 3 and prompt up error at last', () => {
+  const seatsSet3 = [
+      {SeatNo:"A1", Booked:"N"},
+      {SeatNo:"A2", Booked:"N"},
+      {SeatNo:"A3", Booked:"N"},
+      {SeatNo:"A4", Booked:"N"},
+      {SeatNo:"A5", Booked:"N"},
+      {SeatNo:"B1", Booked:"N"},
+      {SeatNo:"B2", Booked:"N"},
+      {SeatNo:"B3", Booked:"N"},
+      {SeatNo:"B4", Booked:"N"},
+      {SeatNo:"B5", Booked:"N"},
+      {SeatNo:"C1", Booked:"N"},
+      {SeatNo:"C2", Booked:"N"},
+      {SeatNo:"C3", Booked:"N"},
+      {SeatNo:"C4", Booked:"N"},
+      {SeatNo:"C5", Booked:"N"}
+  ];
+
+  //getRandomSeat.mockImplementation(() => ({ mockedValue: 2 }));
+  
+  jest.spyOn(getRandomSeat, 'getRandomSeat').mockReturnValue(2);
+
+  expect(cinemaBooking(seatsSet3)).toBe("Success");
+
+  //jest.spyOn(cinemaBooking, 'getRandomSeat').mockRestore();
+});
+*/
