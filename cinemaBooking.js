@@ -23,30 +23,30 @@ function getRandomSeat (min, max) {
     return Math.round(Math.random() * (max - min)) + min;
 }
 
-function chkNumOfSeatsLeft() {
+function chkNumOfSeatsLeft(seatsArr) {
     let cnt = 0;
-    for (let i=0; i<cinemaSeats.length; i++) {
-        if (cinemaSeats[i].Booked=="N") 
+    for (let i=0; i<seatsArr.length; i++) {
+        if (seatsArr[i].Booked=="N") 
             cnt++;
     }
     return cnt;
 }
 
-function bookSeats(numOfSeats) {
-    const seatArr = [];
+function bookSeats(seatsArr,numOfSeats) {
+    const bookedArr = [];
     let totalSeat = numOfSeats;
     
-    for (let i=0; i<cinemaSeats.length; i++) {
+    for (let i=0; i<seatsArr.length; i++) {
         if (totalSeat>0) {
-            if (cinemaSeats[i].Booked=="N") {
-                cinemaSeats[i].Booked="Y";
-                seatArr.push(cinemaSeats[i].SeatNo);
+            if (seatsArr[i].Booked=="N") {
+                seatsArr[i].Booked="Y";
+                bookedArr.push(seatsArr[i].SeatNo);
                 totalSeat--;
             }       
         }
     }
     
-    return seatArr;
+    return bookedArr;
 }
 
 function checkSeat(totalSeats,bookSeats) {
