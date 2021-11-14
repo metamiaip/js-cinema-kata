@@ -85,4 +85,4 @@ module.exports = {
 
 //console.log(getRandomSeat(1,3));
 //console.log(bookSeats(3));
-console.log(cinemaBooking(cinemaSeats));
+//console.log(cinemaBooking(cinemaSeats));
