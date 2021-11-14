@@ -1,7 +1,3 @@
-function getRandomSeat (min, max) {
-    return Math.round(Math.random() * (max - min)) + min;
-}
-
 const cinemaSeats = [
     {SeatNo:"A1", Booked:"N"},
     {SeatNo:"A2", Booked:"N"},
@@ -19,6 +15,13 @@ const cinemaSeats = [
     {SeatNo:"C4", Booked:"N"},
     {SeatNo:"C5", Booked:"N"}
 ];
+
+const minSeat = 1;
+const maxSeat = 3;
+
+function getRandomSeat (min, max) {
+    return Math.round(Math.random() * (max - min)) + min;
+}
 
 function chkNumOfSeatsLeft() {
     let cnt = 0;
@@ -46,11 +49,17 @@ function bookSeats(numOfSeats) {
     return seatArr;
 }
 
+function checkSeat(totalSeats,bookSeats) {
+    return (totalSeats >= bookSeats);
+}
+
 module.exports = {
     getRandomSeat,
     chkNumOfSeatsLeft,
-    bookSeats
+    bookSeats,
+    checkSeat
 };
 
 //console.log(getRandomSeat(1,3));
 //console.log(bookSeats(3));
+//cinemaBooking();
